@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container {
+    position: relative;
+}
+
+.new-rocker-regular {
+    font-family: "New Rocker", system-ui;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+.background-photo {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('https://i.imgur.com/iOvq1vY.jpg');
+    background-size: cover;
+    background-position: right;
+    z-index: -1;
+}
+
+.content {
+    padding-bottom: 17%; 
+    
+}
+
+
+
+
+body {
+    font-family: "New Rocker", system-ui;
+    background-color: #121212;
+    color: #2D47B8; 
+}
+
+
+h1 {
+    text-align: center;
+    line-height: 1;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 200px;
+    color:#ffffff; 
+    font-weight: bold;
+    margin-top: 10%;
+    font-family: "New Rocker", system-ui;
+}
+
+h2 {
+    text-align: center;
+    line-height: 1.3;
+    font-size: 20px;
+    color:#ffffff; 
+    font-weight: normal;
+    margin-top: 1%;
+    font-family: "New Rocker", system-ui;
+}
+
+.artists-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+}
+
+.artist-card {
+    width: calc(20% - 15px); 
+    margin-top: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    text-align: center;
+    text-decoration: none;
+    /* background-color: #1d2024; */
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-5px);
+}
+
+.artist-image {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.artist-name {
+    margin-top: 10px;
+    font-weight: bold;
+    color: #FEBA08; 
+}
+.button-container {
+    text-align: center;
+    margin-top: 25%; 
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FEBA08;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.pulse-button {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}

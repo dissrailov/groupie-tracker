@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist</title>
+    <link rel="stylesheet" href="/static/artistpage.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=New+Rocker&family=Rubik+Moonrocks&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="photo">
+        <div class="background-photo"></div>
+    
+    <div class="artist-info">
+        <img src="{{.Artist.Image}}" alt="{{.Artist.Name}} Image">
+        <div class="Artist">
+            <h2>{{.Artist.Name}}</h2>
+        </div>
+    </div>
+    <div class="info-table">
+        <table>
+            <tr>
+                <td class="table-label">DATE OF CREATION:</td>
+                <td class="table-value">{{.Artist.CreationDate}}</td>
+               
+                <td class="table-label">DATE OF FIRST ALBUM:</td>
+                <td class="table-value">{{.Artist.FirstAlbum}}</td>
+            </tr>
+            <tr>
+                <td class="table-label">MEMBERS:</td>
+                <td class="table-value">
+                    <ul>
+                        {{range .Artist.Members}}
+                            <li>{{.}}</li>
+                        {{end}}
+                    </ul>
+                </td>
+                <td class="table-label">LOCATIONS:</td>
+                <td class="table-value">
+                    {{with .Relations.DatesLocations}}
+                        {{range $location, $dates := .}}
+                            <div>
+                                <h3>{{$location}}:</h3>
+                                {{range $dates}}
+                                    <h4>{{.}}</h4>
+                                {{end}}
+                            </div>
+                        {{end}}
+                    {{else}}
+                        <p>No upcoming concerts available</p>
+                    {{end}}
+                </td>
+            </tr>
+        </table>
+    </div>
+    <div class="button-container">
+        <a href="/" class="button pulse-button">Back to Home Page</a>
+    </div>
+</div>
+</body>
+</html>
